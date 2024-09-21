@@ -1,0 +1,865 @@
+{
+	"folders": [
+		{
+			"name": "TheWalkerGame",
+			"path": "."
+		},
+		{
+			"name": "UE5",
+			"path": "/home/matvey/UnrealEngine"
+		}
+	],
+	"settings": {
+		"typescript.tsc.autoDetect": "off",
+		"npm.autoDetect": "off"
+	},
+	"extensions": {
+		"recommendations": [
+			"ms-vscode.cpptools",
+			"ms-dotnettools.csharp"
+		]
+	},
+	"tasks": {
+		"version": "2.0.0",
+		"tasks": [
+			{
+				"label": "TheWalkerGame Linux Debug Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"TheWalkerGame",
+					"Linux",
+					"Debug",
+					"/home/matvey/Documents/unreal_projects/TheWalkerGame/TheWalkerGame.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/matvey/UnrealEngine"
+				}
+			},
+			{
+				"label": "TheWalkerGame Linux Debug Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"TheWalkerGame",
+					"Linux",
+					"Debug",
+					"/home/matvey/Documents/unreal_projects/TheWalkerGame/TheWalkerGame.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"TheWalkerGame Linux Debug Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/home/matvey/UnrealEngine"
+				}
+			},
+			{
+				"label": "TheWalkerGame Linux Debug Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"TheWalkerGame",
+					"Linux",
+					"Debug",
+					"/home/matvey/Documents/unreal_projects/TheWalkerGame/TheWalkerGame.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/matvey/UnrealEngine"
+				}
+			},
+			{
+				"label": "TheWalkerGame Linux DebugGame Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"TheWalkerGame",
+					"Linux",
+					"DebugGame",
+					"/home/matvey/Documents/unreal_projects/TheWalkerGame/TheWalkerGame.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/matvey/UnrealEngine"
+				}
+			},
+			{
+				"label": "TheWalkerGame Linux DebugGame Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"TheWalkerGame",
+					"Linux",
+					"DebugGame",
+					"/home/matvey/Documents/unreal_projects/TheWalkerGame/TheWalkerGame.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"TheWalkerGame Linux DebugGame Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/home/matvey/UnrealEngine"
+				}
+			},
+			{
+				"label": "TheWalkerGame Linux DebugGame Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"TheWalkerGame",
+					"Linux",
+					"DebugGame",
+					"/home/matvey/Documents/unreal_projects/TheWalkerGame/TheWalkerGame.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/matvey/UnrealEngine"
+				}
+			},
+			{
+				"label": "TheWalkerGame Linux Development Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"TheWalkerGame",
+					"Linux",
+					"Development",
+					"/home/matvey/Documents/unreal_projects/TheWalkerGame/TheWalkerGame.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/matvey/UnrealEngine"
+				}
+			},
+			{
+				"label": "TheWalkerGame Linux Development Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"TheWalkerGame",
+					"Linux",
+					"Development",
+					"/home/matvey/Documents/unreal_projects/TheWalkerGame/TheWalkerGame.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"TheWalkerGame Linux Development Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/home/matvey/UnrealEngine"
+				}
+			},
+			{
+				"label": "TheWalkerGame Linux Development Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"TheWalkerGame",
+					"Linux",
+					"Development",
+					"/home/matvey/Documents/unreal_projects/TheWalkerGame/TheWalkerGame.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/matvey/UnrealEngine"
+				}
+			},
+			{
+				"label": "TheWalkerGame Linux Test Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"TheWalkerGame",
+					"Linux",
+					"Test",
+					"/home/matvey/Documents/unreal_projects/TheWalkerGame/TheWalkerGame.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/matvey/UnrealEngine"
+				}
+			},
+			{
+				"label": "TheWalkerGame Linux Test Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"TheWalkerGame",
+					"Linux",
+					"Test",
+					"/home/matvey/Documents/unreal_projects/TheWalkerGame/TheWalkerGame.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"TheWalkerGame Linux Test Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/home/matvey/UnrealEngine"
+				}
+			},
+			{
+				"label": "TheWalkerGame Linux Test Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"TheWalkerGame",
+					"Linux",
+					"Test",
+					"/home/matvey/Documents/unreal_projects/TheWalkerGame/TheWalkerGame.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/matvey/UnrealEngine"
+				}
+			},
+			{
+				"label": "TheWalkerGame Linux Shipping Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"TheWalkerGame",
+					"Linux",
+					"Shipping",
+					"/home/matvey/Documents/unreal_projects/TheWalkerGame/TheWalkerGame.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/matvey/UnrealEngine"
+				}
+			},
+			{
+				"label": "TheWalkerGame Linux Shipping Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"TheWalkerGame",
+					"Linux",
+					"Shipping",
+					"/home/matvey/Documents/unreal_projects/TheWalkerGame/TheWalkerGame.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"TheWalkerGame Linux Shipping Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/home/matvey/UnrealEngine"
+				}
+			},
+			{
+				"label": "TheWalkerGame Linux Shipping Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"TheWalkerGame",
+					"Linux",
+					"Shipping",
+					"/home/matvey/Documents/unreal_projects/TheWalkerGame/TheWalkerGame.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/matvey/UnrealEngine"
+				}
+			},
+			{
+				"label": "TheWalkerGame LinuxArm64 Debug Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"TheWalkerGame",
+					"LinuxArm64",
+					"Debug",
+					"/home/matvey/Documents/unreal_projects/TheWalkerGame/TheWalkerGame.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/matvey/UnrealEngine"
+				}
+			},
+			{
+				"label": "TheWalkerGame LinuxArm64 Debug Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"TheWalkerGame",
+					"LinuxArm64",
+					"Debug",
+					"/home/matvey/Documents/unreal_projects/TheWalkerGame/TheWalkerGame.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"TheWalkerGame LinuxArm64 Debug Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/home/matvey/UnrealEngine"
+				}
+			},
+			{
+				"label": "TheWalkerGame LinuxArm64 Debug Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"TheWalkerGame",
+					"LinuxArm64",
+					"Debug",
+					"/home/matvey/Documents/unreal_projects/TheWalkerGame/TheWalkerGame.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/matvey/UnrealEngine"
+				}
+			},
+			{
+				"label": "TheWalkerGame LinuxArm64 DebugGame Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"TheWalkerGame",
+					"LinuxArm64",
+					"DebugGame",
+					"/home/matvey/Documents/unreal_projects/TheWalkerGame/TheWalkerGame.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/matvey/UnrealEngine"
+				}
+			},
+			{
+				"label": "TheWalkerGame LinuxArm64 DebugGame Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"TheWalkerGame",
+					"LinuxArm64",
+					"DebugGame",
+					"/home/matvey/Documents/unreal_projects/TheWalkerGame/TheWalkerGame.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"TheWalkerGame LinuxArm64 DebugGame Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/home/matvey/UnrealEngine"
+				}
+			},
+			{
+				"label": "TheWalkerGame LinuxArm64 DebugGame Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"TheWalkerGame",
+					"LinuxArm64",
+					"DebugGame",
+					"/home/matvey/Documents/unreal_projects/TheWalkerGame/TheWalkerGame.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/matvey/UnrealEngine"
+				}
+			},
+			{
+				"label": "TheWalkerGame LinuxArm64 Development Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"TheWalkerGame",
+					"LinuxArm64",
+					"Development",
+					"/home/matvey/Documents/unreal_projects/TheWalkerGame/TheWalkerGame.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/matvey/UnrealEngine"
+				}
+			},
+			{
+				"label": "TheWalkerGame LinuxArm64 Development Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"TheWalkerGame",
+					"LinuxArm64",
+					"Development",
+					"/home/matvey/Documents/unreal_projects/TheWalkerGame/TheWalkerGame.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"TheWalkerGame LinuxArm64 Development Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/home/matvey/UnrealEngine"
+				}
+			},
+			{
+				"label": "TheWalkerGame LinuxArm64 Development Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"TheWalkerGame",
+					"LinuxArm64",
+					"Development",
+					"/home/matvey/Documents/unreal_projects/TheWalkerGame/TheWalkerGame.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/matvey/UnrealEngine"
+				}
+			},
+			{
+				"label": "TheWalkerGame LinuxArm64 Test Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"TheWalkerGame",
+					"LinuxArm64",
+					"Test",
+					"/home/matvey/Documents/unreal_projects/TheWalkerGame/TheWalkerGame.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/matvey/UnrealEngine"
+				}
+			},
+			{
+				"label": "TheWalkerGame LinuxArm64 Test Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"TheWalkerGame",
+					"LinuxArm64",
+					"Test",
+					"/home/matvey/Documents/unreal_projects/TheWalkerGame/TheWalkerGame.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"TheWalkerGame LinuxArm64 Test Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/home/matvey/UnrealEngine"
+				}
+			},
+			{
+				"label": "TheWalkerGame LinuxArm64 Test Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"TheWalkerGame",
+					"LinuxArm64",
+					"Test",
+					"/home/matvey/Documents/unreal_projects/TheWalkerGame/TheWalkerGame.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/matvey/UnrealEngine"
+				}
+			},
+			{
+				"label": "TheWalkerGame LinuxArm64 Shipping Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"TheWalkerGame",
+					"LinuxArm64",
+					"Shipping",
+					"/home/matvey/Documents/unreal_projects/TheWalkerGame/TheWalkerGame.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/matvey/UnrealEngine"
+				}
+			},
+			{
+				"label": "TheWalkerGame LinuxArm64 Shipping Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"TheWalkerGame",
+					"LinuxArm64",
+					"Shipping",
+					"/home/matvey/Documents/unreal_projects/TheWalkerGame/TheWalkerGame.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"TheWalkerGame LinuxArm64 Shipping Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/home/matvey/UnrealEngine"
+				}
+			},
+			{
+				"label": "TheWalkerGame LinuxArm64 Shipping Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"TheWalkerGame",
+					"LinuxArm64",
+					"Shipping",
+					"/home/matvey/Documents/unreal_projects/TheWalkerGame/TheWalkerGame.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/matvey/UnrealEngine"
+				}
+			},
+			{
+				"label": "TheWalkerGameEditor Linux Debug Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"TheWalkerGameEditor",
+					"Linux",
+					"Debug",
+					"/home/matvey/Documents/unreal_projects/TheWalkerGame/TheWalkerGame.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/matvey/UnrealEngine"
+				}
+			},
+			{
+				"label": "TheWalkerGameEditor Linux Debug Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"TheWalkerGameEditor",
+					"Linux",
+					"Debug",
+					"/home/matvey/Documents/unreal_projects/TheWalkerGame/TheWalkerGame.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"TheWalkerGameEditor Linux Debug Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/home/matvey/UnrealEngine"
+				}
+			},
+			{
+				"label": "TheWalkerGameEditor Linux Debug Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"TheWalkerGameEditor",
+					"Linux",
+					"Debug",
+					"/home/matvey/Documents/unreal_projects/TheWalkerGame/TheWalkerGame.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/matvey/UnrealEngine"
+				}
+			},
+			{
+				"label": "TheWalkerGameEditor Linux DebugGame Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"TheWalkerGameEditor",
+					"Linux",
+					"DebugGame",
+					"/home/matvey/Documents/unreal_projects/TheWalkerGame/TheWalkerGame.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/matvey/UnrealEngine"
+				}
+			},
+			{
+				"label": "TheWalkerGameEditor Linux DebugGame Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"TheWalkerGameEditor",
+					"Linux",
+					"DebugGame",
+					"/home/matvey/Documents/unreal_projects/TheWalkerGame/TheWalkerGame.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"TheWalkerGameEditor Linux DebugGame Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/home/matvey/UnrealEngine"
+				}
+			},
+			{
+				"label": "TheWalkerGameEditor Linux DebugGame Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"TheWalkerGameEditor",
+					"Linux",
+					"DebugGame",
+					"/home/matvey/Documents/unreal_projects/TheWalkerGame/TheWalkerGame.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/matvey/UnrealEngine"
+				}
+			},
+			{
+				"label": "TheWalkerGameEditor Linux Development Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"TheWalkerGameEditor",
+					"Linux",
+					"Development",
+					"/home/matvey/Documents/unreal_projects/TheWalkerGame/TheWalkerGame.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/matvey/UnrealEngine"
+				}
+			},
+			{
+				"label": "TheWalkerGameEditor Linux Development Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"TheWalkerGameEditor",
+					"Linux",
+					"Development",
+					"/home/matvey/Documents/unreal_projects/TheWalkerGame/TheWalkerGame.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"TheWalkerGameEditor Linux Development Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/home/matvey/UnrealEngine"
+				}
+			},
+			{
+				"label": "TheWalkerGameEditor Linux Development Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"TheWalkerGameEditor",
+					"Linux",
+					"Development",
+					"/home/matvey/Documents/unreal_projects/TheWalkerGame/TheWalkerGame.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/matvey/UnrealEngine"
+				}
+			}
+		]
+	},
+	"launch": {
+		"version": "0.2.0",
+		"configurations": [
+			{
+				"name": "Launch TheWalkerGame (Debug)",
+				"request": "launch",
+				"program": "/home/matvey/Documents/unreal_projects/TheWalkerGame/Binaries/Linux/TheWalkerGame-Linux-Debug",
+				"preLaunchTask": "TheWalkerGame Linux Debug Build",
+				"args": [
+				],
+				"cwd": "/home/matvey/UnrealEngine",
+				"type": "cppdbg",
+				"visualizerFile": "/home/matvey/UnrealEngine/Engine/Extras/VisualStudioDebugging/Unreal.natvis",
+				"showDisplayString": true
+			},
+			{
+				"name": "Launch TheWalkerGame (DebugGame)",
+				"request": "launch",
+				"program": "/home/matvey/Documents/unreal_projects/TheWalkerGame/Binaries/Linux/TheWalkerGame-Linux-DebugGame",
+				"preLaunchTask": "TheWalkerGame Linux DebugGame Build",
+				"args": [
+				],
+				"cwd": "/home/matvey/UnrealEngine",
+				"type": "cppdbg",
+				"visualizerFile": "/home/matvey/UnrealEngine/Engine/Extras/VisualStudioDebugging/Unreal.natvis",
+				"showDisplayString": true
+			},
+			{
+				"name": "Launch TheWalkerGame (Development)",
+				"request": "launch",
+				"program": "/home/matvey/Documents/unreal_projects/TheWalkerGame/Binaries/Linux/TheWalkerGame",
+				"preLaunchTask": "TheWalkerGame Linux Development Build",
+				"args": [
+				],
+				"cwd": "/home/matvey/UnrealEngine",
+				"type": "cppdbg",
+				"visualizerFile": "/home/matvey/UnrealEngine/Engine/Extras/VisualStudioDebugging/Unreal.natvis",
+				"showDisplayString": true
+			},
+			{
+				"name": "Launch TheWalkerGame (Test)",
+				"request": "launch",
+				"program": "/home/matvey/Documents/unreal_projects/TheWalkerGame/Binaries/Linux/TheWalkerGame-Linux-Test",
+				"preLaunchTask": "TheWalkerGame Linux Test Build",
+				"args": [
+				],
+				"cwd": "/home/matvey/UnrealEngine",
+				"type": "cppdbg",
+				"visualizerFile": "/home/matvey/UnrealEngine/Engine/Extras/VisualStudioDebugging/Unreal.natvis",
+				"showDisplayString": true
+			},
+			{
+				"name": "Launch TheWalkerGame (Shipping)",
+				"request": "launch",
+				"program": "/home/matvey/Documents/unreal_projects/TheWalkerGame/Binaries/Linux/TheWalkerGame-Linux-Shipping",
+				"preLaunchTask": "TheWalkerGame Linux Shipping Build",
+				"args": [
+				],
+				"cwd": "/home/matvey/UnrealEngine",
+				"type": "cppdbg",
+				"visualizerFile": "/home/matvey/UnrealEngine/Engine/Extras/VisualStudioDebugging/Unreal.natvis",
+				"showDisplayString": true
+			},
+			{
+				"name": "Launch TheWalkerGameEditor (Debug)",
+				"request": "launch",
+				"program": "/home/matvey/UnrealEngine/Engine/Binaries/Linux/UnrealEditor-Linux-Debug",
+				"preLaunchTask": "TheWalkerGameEditor Linux Debug Build",
+				"args": [
+					"/home/matvey/Documents/unreal_projects/TheWalkerGame/TheWalkerGame.uproject"
+				],
+				"cwd": "/home/matvey/UnrealEngine",
+				"type": "cppdbg",
+				"visualizerFile": "/home/matvey/UnrealEngine/Engine/Extras/VisualStudioDebugging/Unreal.natvis",
+				"showDisplayString": true
+			},
+			{
+				"name": "Launch TheWalkerGameEditor (DebugGame)",
+				"request": "launch",
+				"program": "/home/matvey/UnrealEngine/Engine/Binaries/Linux/UnrealEditor-Linux-DebugGame",
+				"preLaunchTask": "TheWalkerGameEditor Linux DebugGame Build",
+				"args": [
+					"/home/matvey/Documents/unreal_projects/TheWalkerGame/TheWalkerGame.uproject"
+				],
+				"cwd": "/home/matvey/UnrealEngine",
+				"type": "cppdbg",
+				"visualizerFile": "/home/matvey/UnrealEngine/Engine/Extras/VisualStudioDebugging/Unreal.natvis",
+				"showDisplayString": true
+			},
+			{
+				"name": "Launch TheWalkerGameEditor (Development)",
+				"request": "launch",
+				"program": "/home/matvey/UnrealEngine/Engine/Binaries/Linux/UnrealEditor",
+				"preLaunchTask": "TheWalkerGameEditor Linux Development Build",
+				"args": [
+					"/home/matvey/Documents/unreal_projects/TheWalkerGame/TheWalkerGame.uproject"
+				],
+				"cwd": "/home/matvey/UnrealEngine",
+				"type": "cppdbg",
+				"visualizerFile": "/home/matvey/UnrealEngine/Engine/Extras/VisualStudioDebugging/Unreal.natvis",
+				"showDisplayString": true
+			},
+			{
+				"name": "Generate Project Files",
+				"type": "coreclr",
+				"request": "launch",
+				"preLaunchTask": "UnrealBuildTool Linux Development Build",
+				"program": "/home/matvey/UnrealEngine/Engine/Build/BatchFiles/RunUBT.bat",
+				"args": [
+					"-projectfiles",
+					"-vscode",
+					"-project=/home/matvey/Documents/unreal_projects/TheWalkerGame/TheWalkerGame.uproject",
+					"-game",
+					"-engine",
+					"-dotnet"
+				],
+				"console": "internalConsole",
+				"internalConsoleOptions": "openOnSessionStart",
+				"stopAtEntry": false,
+				"cwd": "/home/matvey/UnrealEngine"
+			}
+		]
+	}
+}
