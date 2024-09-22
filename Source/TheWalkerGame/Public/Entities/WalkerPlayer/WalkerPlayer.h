@@ -8,10 +8,15 @@
 
 #include "WalkerPlayer.generated.h"
 
+DECLARE_MULTICAST_DELEGATE_OneParam(FHandleCollectableEventSignature, const ACharacter*);
+
 UCLASS()
 class AWalkerPlayer : public ACharacter, public IIWalkerPlayer
 {
     GENERATED_BODY()
+
+public:
+    FHandleCollectableEventSignature OnHandleCollectableEvent;
 
 public:
     AWalkerPlayer();

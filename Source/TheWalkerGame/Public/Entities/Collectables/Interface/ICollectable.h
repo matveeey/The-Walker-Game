@@ -14,6 +14,6 @@ class IICollectable
     GENERATED_BODY()
 
 public:
-    virtual FString GetItemName() const = 0; // Return item name for display purposes
+    virtual const FString GetItemName() const = 0; // Return item name for display purposes
 
 };

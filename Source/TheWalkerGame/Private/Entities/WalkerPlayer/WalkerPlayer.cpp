@@ -1,12 +1,9 @@
-#include "TheWalkerGame/Public/WalkerPlayer/WalkerPlayer.h"
+#include "TheWalkerGame/Public/Entities/WalkerPlayer/WalkerPlayer.h"
 #include "GameFramework/InputSettings.h"
 
 AWalkerPlayer::AWalkerPlayer()
 {
-    // Set this character to call Tick() every frame.
     PrimaryActorTick.bCanEverTick = true;
-
-    // ... (other initialization code)
 }
 
 void AWalkerPlayer::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
@@ -46,15 +43,20 @@ void AWalkerPlayer::Tick(float DeltaTime)
 
 void AWalkerPlayer::CollectItem(TSubclassOf<AActor> ItemClass, AActor* CollectedItem)
 {
+    UE_LOG(LogTemp, Warning, TEXT("[DEBUG] collect itm"));
 
+    if (OnHandleCollectableEvent.IsBound())
+    {
+        OnHandleCollectableEvent.Broadcast(this);
+    }
 }
 
 void AWalkerPlayer::MoveForward(float Value)
 {
-    // Forward movement code here
+    UE_LOG(LogTemp, Warning, TEXT("[DEBUG] move fwd %s"), *FString::SanitizeFloat(Value));
 }
 
 void AWalkerPlayer::MoveRight(float Value)
 {
-    // Right movement code here
+    UE_LOG(LogTemp, Warning, TEXT("[DEBUG] move rgt %s"), *FString::SanitizeFloat(Value));
 }
