@@ -4,7 +4,13 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
 
+// WalkerPlayer Interface
+
 #include "Interface/IWalkerPlayer.h"
+
+// Components
+#include "Camera/CameraComponent.h"
+#include "Components/StaticMeshComponent.h"
 
 #include "WalkerPlayer.generated.h"
 
@@ -15,25 +21,22 @@ class AWalkerPlayer : public ACharacter, public IIWalkerPlayer
 {
     GENERATED_BODY()
 
+// Async Events
 public:
     FHandleCollectableEventSignature OnHandleCollectableEvent;
 
+// Logic
 public:
     AWalkerPlayer();
 
-protected:
-    // Called when the game starts or when re-spawning
-    virtual void BeginPlay() override;
-
-public:
-    // Called every frame
-    virtual void Tick(float DeltaTime) override;
-    
-    // Called to bind functionality to input
+// Logic: Inputs binding
     virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
+protected:
+    virtual void BeginPlay() override;
+    virtual void Tick(float DeltaTime) override;
+
+// Logic: Input Handling
 private:
-    virtual void CollectItem(TSubclassOf<AActor> ItemClass, AActor* CollectedItem) override;
-    virtual void MoveForward(float Value) override;
-    virtual void MoveRight(float Value) override;
+    virtual void CollectItem() override;
 };

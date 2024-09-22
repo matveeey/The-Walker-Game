@@ -6,23 +6,16 @@ AWalkerPlayer::AWalkerPlayer()
     PrimaryActorTick.bCanEverTick = true;
 }
 
+// for now there would be internal inputs handling due to lack of time
 void AWalkerPlayer::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
     Super::SetupPlayerInputComponent(PlayerInputComponent);
 
-    // // Bind movement controls
-    // FInputActionBinding Binding;
-    // Binding.Action = FName("MoveForward");
-    // Binding.EPress = EInputEvent::IE_Pressed;
-    // Binding.bConsumeInput = true;
-
-    // PlayerInputComponent->BindAction(Binding, IE_Pressed, this, &AWalkerPlayer::MoveForward);
-
-    // Binding.Action = FName("MoveRight");
-    // Binding.EPress = EInputEvent::IE_Pressed;
-    // Binding.bConsumeInput = true;
-
-    // PlayerInputComponent->BindAction(Binding, IE_Pressed, this, &AWalkerPlayer::MoveRight);
+    // Actions section
+    PlayerInputComponent->BindAction(FName("CollectItem"), IE_Pressed, this, &AWalkerPlayer::CollectItem);
+    
+    // Axis section
+    // PlayerInputComponent->BindAxis(FName("MoveRight"), this, &AWalkerPlayer::MoveRight);
 }
 
 void AWalkerPlayer::BeginPlay()
@@ -34,14 +27,9 @@ void AWalkerPlayer::Tick(float DeltaTime)
 {
     Super::Tick(DeltaTime);
 
-    // Update WalkerPlayer movement
-    // if (Controller != nullptr && Controller->GetPlayerState<APlayerState>()->IsMoving())
-    // {
-    //     Move(Controller->GetPlayerState<APlayerState>()->GetMovementDirection() * DeltaTime);
-    // }
 }
 
-void AWalkerPlayer::CollectItem(TSubclassOf<AActor> ItemClass, AActor* CollectedItem)
+void AWalkerPlayer::CollectItem()
 {
     UE_LOG(LogTemp, Warning, TEXT("[DEBUG] collect itm"));
 
@@ -49,14 +37,4 @@ void AWalkerPlayer::CollectItem(TSubclassOf<AActor> ItemClass, AActor* Collected
     {
         OnHandleCollectableEvent.Broadcast(this);
     }
-}
-
-void AWalkerPlayer::MoveForward(float Value)
-{
-    UE_LOG(LogTemp, Warning, TEXT("[DEBUG] move fwd %s"), *FString::SanitizeFloat(Value));
-}
-
-void AWalkerPlayer::MoveRight(float Value)
-{
-    UE_LOG(LogTemp, Warning, TEXT("[DEBUG] move rgt %s"), *FString::SanitizeFloat(Value));
 }
