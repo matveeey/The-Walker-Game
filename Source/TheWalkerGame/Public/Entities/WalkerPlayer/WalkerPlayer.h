@@ -14,7 +14,7 @@
 
 #include "WalkerPlayer.generated.h"
 
-DECLARE_MULTICAST_DELEGATE_OneParam(FHandleCollectableEventSignature, const ACharacter*);
+DECLARE_MULTICAST_DELEGATE_OneParam(FHandleCollectableEventSignature, const AActor*);
 
 UCLASS()
 class AWalkerPlayer : public ACharacter, public IIWalkerPlayer
