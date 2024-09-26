@@ -33,7 +33,7 @@ void AWalkerPlayer::Tick(float DeltaTime)
 
 void AWalkerPlayer::CollectItem()
 {
-	UE_LOG(LogTemp, Warning, TEXT("[DEBUG] collect itm"));
+	UE_LOG(LogTemp, Warning, TEXT("[DEBUG] 1collect itm"));
 
 	TArray<AActor*> Items;
 	GetOverlappingActors(Items, ACollectable::StaticClass());

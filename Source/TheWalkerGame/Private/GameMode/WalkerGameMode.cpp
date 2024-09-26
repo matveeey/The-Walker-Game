@@ -29,12 +29,13 @@ void AWalkerGameMode::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 }
 
-void AWalkerGameMode::HandleCollectableEvent(const AActor* Collectable)
+void AWalkerGameMode::HandleCollectableEvent(const AActor* Item)
 {
-	const ACollectable* Item = Cast<ACollectable>(Collectable);
-	if (Item)
+	const ACollectable* Collectable = Cast<ACollectable>(Item);
+	if (Collectable)
 	{
-		UE_LOG(LogTemp, Warning, TEXT("[DEBUG] GameMode: received %s"), *Item->GetItemName());
+		UE_LOG(LogTemp, Warning, TEXT("[DEBUG] GameMode: received %s"), *Collectable->GetItemName());
+		Collectable->ToggleVisibility();
 	}
 	else
 	{

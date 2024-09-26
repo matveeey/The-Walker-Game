@@ -35,13 +35,19 @@ public:
 
 public:
     virtual const FString GetItemName() const override;
+    
+    // 'const' here is kinda stupid because it actually changes the state of an instance..
+    void ToggleVisibility() const;
 
 protected:
     virtual void BeginPlay() override;
     virtual void Tick(float DeltaTime) override;
 
 private:
+    void CreateStaticMeshComponent();
+    void CreateColliderBoxComponent();
     void CreateStaticMeshComponentRT();
     void CreateColliderBoxComponentRT();
 
+    bool bInitOnRT = false;
 };

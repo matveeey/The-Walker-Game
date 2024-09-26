@@ -1,7 +1,10 @@
 #pragma once
 
 #include "CoreMinimal.h"
+
+#if WITH_EDITOR
 #include "LevelEditor.h"
+#endif
 
 namespace Utils
 {

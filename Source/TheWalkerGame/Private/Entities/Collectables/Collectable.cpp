@@ -11,6 +11,12 @@ ACollectable::ACollectable()
 {
 	// Glass of Alcohol by default
 	Name = Defaults::Collectables::Name;
+
+	if (!bInitOnRT)
+	{
+		CreateStaticMeshComponent();
+		CreateColliderBoxComponent();
+	}
 }
 
 const FString ACollectable::GetItemName() const
@@ -18,24 +24,24 @@ const FString ACollectable::GetItemName() const
 	return Name;
 }
 
-// 1) велосипед
-// 2) карта мира (можно показать рулон свёрнутой бумаги
-// 3) стакан с алкоголем
-// 4) мешочек с лавандой
-// 5) стопка книг по марксизму
-// 6) обручальные кольца
-// 7) пистолет
+void ACollectable::ToggleVisibility() const
+{
+	StaticMeshComponent->ToggleVisibility();
+}
 
 void ACollectable::BeginPlay()
 {
 	Super::BeginPlay();
-	
-	UE_LOG(LogTemp, Warning, TEXT("[DEBUG] Collectable BeginPlay! %s"), *Name);
+	//
+	UE_LOG(LogTemp, Warning, TEXT("[DEBUG] Collectable1 BeginPlay! %s"), *Name);
 	
 	Name = Defaults::Collectables::Name; // Glass of Alcohol
 
-	CreateStaticMeshComponentRT();
-	CreateColliderBoxComponentRT();
+	if (bInitOnRT)
+	{
+		CreateStaticMeshComponentRT();
+		CreateColliderBoxComponentRT();
+	}
 }
 
 void ACollectable::Tick(float DeltaTime)
@@ -43,11 +49,31 @@ void ACollectable::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 }
 
+void ACollectable::CreateStaticMeshComponent()
+{
+	StaticMeshComponent = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Static Mesh Component"));
+	StaticMeshComponent->SetupAttachment(RootComponent);
+
+	// TODO: for now this is disabled
+	//
+	// UStaticMesh* StaticMesh = Utils::LoadStaticMesh(Defaults::Collectables::MeshPath[Name]);
+	// if (StaticMesh)
+	// {
+	// 	StaticMeshComponent->SetStaticMesh(StaticMesh);
+	// }
+}
+
+void ACollectable::CreateColliderBoxComponent()
+{
+	ColliderBoxComponent = CreateDefaultSubobject<UBoxComponent>(TEXT("Collider Box Component"));
+	ColliderBoxComponent->SetupAttachment(StaticMeshComponent);
+}
+
 void ACollectable::CreateStaticMeshComponentRT()
 {
 	StaticMeshComponent = Utils::CreateDynamicComponent<UStaticMeshComponent>(*Cast<AActor>(this), TEXT("Static Mesh Component"));
 
-	UStaticMesh* StaticMesh = Utils::LoadStaticMeshOnRT(Name);
+	UStaticMesh* StaticMesh = Utils::LoadStaticMeshOnRT(Defaults::Collectables::MeshPath[Name]);
 	
 	if (StaticMesh)
 	{
