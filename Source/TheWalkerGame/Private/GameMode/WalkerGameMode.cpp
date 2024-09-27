@@ -5,6 +5,9 @@
 
 #include "TheWalkerGame/Public/Entities/Collectables/Collectable.h"
 
+// TODO: do not do this pls..
+#define ItemsAmount 7
+
 AWalkerGameMode::AWalkerGameMode()
 {
 }
@@ -29,13 +32,16 @@ void AWalkerGameMode::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 }
 
-void AWalkerGameMode::HandleCollectableEvent(const AActor* Item)
+void AWalkerGameMode::HandleCollectableEvent(AActor* Item)
 {
-	const ACollectable* Collectable = Cast<ACollectable>(Item);
+	ACollectable* Collectable = Cast<ACollectable>(Item);
 	if (Collectable)
 	{
+		// Perform collectables logic
 		UE_LOG(LogTemp, Warning, TEXT("[DEBUG] GameMode: received %s"), *Collectable->GetItemName());
-		Collectable->ToggleVisibility();
+		Collectable->Pick();
+
+		// Perform door logic
 	}
 	else
 	{

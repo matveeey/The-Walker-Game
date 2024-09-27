@@ -1,7 +1,8 @@
-Content
 .vscode
 Saved
 Intermediate
 Binaries
 .ignore
-
+Build
+DerivedDataCache
+Linux

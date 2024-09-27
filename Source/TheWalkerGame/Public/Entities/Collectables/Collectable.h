@@ -13,12 +13,12 @@ class ACollectable : public AActor, public IICollectable
     GENERATED_BODY()
 
 protected:
-    UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+    UPROPERTY(EditAnywhere, BlueprintReadWrite)
     FString Name;
 
     UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
-    bool bIsPicked = false;
-    
+    bool bIsPicked;
+
     UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
     class UStaticMeshComponent* StaticMeshComponent;
 
@@ -37,7 +37,8 @@ public:
     virtual const FString GetItemName() const override;
     
     // 'const' here is kinda stupid because it actually changes the state of an instance..
-    void ToggleVisibility() const;
+    void ToggleVisibility();
+    void Pick();
 
 protected:
     virtual void BeginPlay() override;

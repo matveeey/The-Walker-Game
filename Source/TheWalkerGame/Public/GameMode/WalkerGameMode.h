@@ -23,7 +23,7 @@ public:
 
 private:
     UFUNCTION()
-    void HandleCollectableEvent(const AActor* Item);
+    void HandleCollectableEvent(AActor* Item);
 
     APawn* GetPossessedPawn();
 };

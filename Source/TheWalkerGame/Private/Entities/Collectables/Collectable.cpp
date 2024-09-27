@@ -10,7 +10,13 @@
 ACollectable::ACollectable()
 {
 	// Glass of Alcohol by default
-	Name = Defaults::Collectables::Name;
+	if (Name.IsEmpty())
+	{
+		Name = Defaults::Collectables::Name;
+		UE_LOG(LogTemp, Warning, TEXT("[DEBUG] Set default name %s"), *Name);
+	}
+
+	bIsPicked = false;
 
 	if (!bInitOnRT)
 	{
@@ -24,9 +30,18 @@ const FString ACollectable::GetItemName() const
 	return Name;
 }
 
-void ACollectable::ToggleVisibility() const
+void ACollectable::ToggleVisibility()
 {
 	StaticMeshComponent->ToggleVisibility();
+}
+
+void ACollectable::Pick()
+{
+	bIsPicked = true;
+	SetActorLocation(Defaults::Collectables::NewPlace::Locations[Name]);
+	StaticMeshComponent->SetRelativeRotation(Defaults::Collectables::NewPlace::Rotators[Name]);
+	// UE_LOG(LogTemp, Warning, TEXT("[DEBUG] Desired Rotation: %s"), *Defaults::Collectables::NewPlace::Rotations[Name].ToString());
+	// UE_LOG(LogTemp, Warning, TEXT("[DEBUG] Actual Rotation: %s"), *StaticMeshComponent->GetRelativeRotation().ToString());
 }
 
 void ACollectable::BeginPlay()
@@ -35,8 +50,6 @@ void ACollectable::BeginPlay()
 	//
 	UE_LOG(LogTemp, Warning, TEXT("[DEBUG] Collectable1 BeginPlay! %s"), *Name);
 	
-	Name = Defaults::Collectables::Name; // Glass of Alcohol
-
 	if (bInitOnRT)
 	{
 		CreateStaticMeshComponentRT();
