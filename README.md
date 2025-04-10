@@ -50,7 +50,7 @@ When all an item is being collected, it moves to the bedroom (quite mysteriously
 
 ## Gameplay video
 
-![Game Overview](Media/Videos/overview.gif)
+![Game Overview](Media/Videos/overview.webm)
 
 ## Lastly
 
