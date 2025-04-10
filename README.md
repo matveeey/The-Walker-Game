@@ -20,24 +20,21 @@ Players will find themselves in abandoned area with a mysterious house and a gar
 
 ### 3D Modeling in Blender
 
-| Stage 1 | Stage 2 | Stage 3 |
+| House model creation | Interior development | Final touches |
 |---------|---------|---------|
 | ![House model creation](Media/Pictures/blender_house_0.jpg) | ![Interior development](Media/Pictures/blender_house_1.jpg) | ![Final touches](Media/Pictures/blender_house_2.jpg) |
-| House model creation | Interior development | Final touches |
 
 ### Area overview in Unreal Engine
 
-| Stage 1 | Stage 2 | Stage 3 |
+| Abandoned garden | House | Collectables |
 |---------|---------|---------|
 | ![Abandoned garden](Media/Pictures/ue_scene_0.png) | ![House](Media/Pictures/ue_scene_1.png) | ![Collectables](Media/Pictures/ue_scene_2_items.png) |
-| Abandoned garden | House | Collectables |
 
 ### Interior Development
 
-| Stage 1 | Stage 2 | Stage 3 |
+| Light placing | Intermediate result | Final interior |
 |---------|---------|---------|
 | ![Interior View 1](Media/Pictures/ue_houseinterior_0.png) | ![Interior View 2](Media/Pictures/ue_houseinterior_1.png) | ![Interior View 3](Media/Pictures/ue_houseinterior_2.png) |
-| Light placing | Intermediate result | Final interior |
 
 ### Gameplay Overview
 
